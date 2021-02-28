@@ -3,6 +3,7 @@
 namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
+use Illuminate\Support\Str;
 
 class ValidIban implements Rule
 {
@@ -25,7 +26,8 @@ class ValidIban implements Rule
      */
     public function passes($attribute, $value)
     {
-        return $this->IbanValidation();
+        return  true;
+//        return $this->IbanValidation($value);
     }
 
     /**
@@ -39,8 +41,14 @@ class ValidIban implements Rule
     }
 
 
-    private function IbanValidation(int $iban)
+    private function IbanValidation(string $isbn)
     {
+//        see more here: https://www.instructables.com/How-to-verify-a-ISBN/
+        if (Str::length($isbn) !== 10) {
+
+            return false;
+        }
+
         return true;
     }
 }

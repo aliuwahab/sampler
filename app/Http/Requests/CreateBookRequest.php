@@ -13,7 +13,7 @@ class CreateBookRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,7 +25,7 @@ class CreateBookRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'isbn' => 'required|valid-iban|unique:books',
+            'isbn' => 'required|unique:books',
             'published_at' => 'required|date'
         ];
     }
