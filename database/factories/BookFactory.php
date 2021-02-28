@@ -27,14 +27,13 @@ class BookFactory extends Factory
             'title' => $this->faker->sentence(6),
             'isbn' => Arr::random(self::validIbans()),
             'published_at' => now(),
-            'status' => Arr::random(['CHECKED_OUT','AVAILABLE']),
-            'created_at' => now(),
+            'status' => Arr::random(['CHECKED_OUT','AVAILABLE'])
         ];
     }
 
     public static function validIbans(): array
     {
-        // List of valid Ibans as shared in the challenge
+        // List of valid Ibans
         return [
             '0005534186',
             '0978110196',
@@ -57,20 +56,5 @@ class BookFactory extends Factory
             '0593139135',
             '0441013597',
         ];
-    }
-
-
-    /**
-     * Indicate that the ibans's of the book should be unique.
-     *
-     * @return \Illuminate\Database\Eloquent\Factories\Factory
-     */
-    public function uniqueIbans()
-    {
-        return $this->state(function (array $attributes) {
-            return [
-                'email_verified_at' => null,
-            ];
-        });
     }
 }
