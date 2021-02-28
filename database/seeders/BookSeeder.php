@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Book;
+use Database\Factories\BookFactory;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class BookSeeder extends Seeder
 {
@@ -14,9 +16,13 @@ class BookSeeder extends Seeder
      */
     public function run()
     {
-        Book::factory()
-            ->count(20)
-            ->state('uniqueIban')
-            ->create();
+        //Build a collection of books (using the make method) to avoid multiple db hits
+        $books = collect([]);
+        collect(BookFactory::validIbans())->each(function ($item, $key) use($books){
+            $books[] = Book::factory()->make(['isbn' => $item]);
+        });
+
+        //Insert all 20 books that were generated above at ones...performance.
+        DB::table('books')->insert($books->toArray());
     }
 }

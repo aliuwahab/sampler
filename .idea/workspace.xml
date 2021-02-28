@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="836aa09f-0133-4861-9872-963a1f9e3e58" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/BookFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/BookFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_26_005843_create_books_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_26_005843_create_books_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/BookSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/BookSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
     </list>
@@ -162,7 +162,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1614300994921</updated>
-      <workItem from="1614300996319" duration="11470000" />
+      <workItem from="1614300996319" duration="11789000" />
     </task>
     <servers />
   </component>
