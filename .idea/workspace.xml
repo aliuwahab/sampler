@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="836aa09f-0133-4861-9872-963a1f9e3e58" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CreatUserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CreatUserRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CreateBookRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CreateBookRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_26_005843_create_books_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_26_005843_create_books_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/BookSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/BookSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +162,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1614300994921</updated>
-      <workItem from="1614300996319" duration="11789000" />
+      <workItem from="1614300996319" duration="12879000" />
     </task>
     <servers />
   </component>

@@ -18,7 +18,7 @@ class CreateBooksTable extends Migration
             $table->string('title', 255);
             $table->string('isbn', 10)->unique();
             $table->timestamp('published_at');
-            $table->enum('status', ['CHECKED_OUT','AVAILABLE']);
+            $table->enum('status', ['CHECKED_OUT','AVAILABLE'])->default('AVAILABLE');
             $table->timestamps();
         });
     }

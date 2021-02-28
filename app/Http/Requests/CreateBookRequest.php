@@ -24,7 +24,9 @@ class CreateBookRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required',
+            'isbn' => 'required|valid-iban|unique:books',
+            'published_at' => 'required|date'
         ];
     }
 }
