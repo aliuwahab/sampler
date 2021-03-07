@@ -9,7 +9,10 @@ class Book extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'isbn', 'published_at', 'status'];
+    const STATUS_AVAILABLE = 'AVAILABLE';
+    const STATUS_CHECKED_OUT = 'CHECKED_OUT';
+
+    protected $guarded = ['id'];
 
 
 }

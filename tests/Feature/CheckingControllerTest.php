@@ -2,10 +2,12 @@
 
 namespace Tests\Feature;
 
+use App\Events\BookCheck;
 use App\Models\Book;
 use App\Models\User;
 use App\Models\UserActionLog;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Event;
 use Tests\TestCase;
 
 class CheckingControllerTest extends TestCase
@@ -63,6 +65,8 @@ class CheckingControllerTest extends TestCase
 
     public function test_valid_data_creates_a_check_in_record()
     {
+        Event::fake();
+
         $user = User::factory()->create();
         $book = Book::factory()->create(['isbn' => '0978110196', 'status' => Book::STATUS_AVAILABLE]);
         $checkInData = ['book_id' => $book->id, 'user_id' => $user->id];
@@ -70,6 +74,9 @@ class CheckingControllerTest extends TestCase
         $response = $this->actingAs($user)->post(route('api.checkout'), $checkInData, ['Accept' => 'application/json']);
 
         $response->assertJson(['success' => true, 'message' => 'Book Check-Out successfully']);
+
+        Event::assertDispatched(BookCheck::class);
+
     }
 
 
@@ -99,6 +106,8 @@ class CheckingControllerTest extends TestCase
 
     public function test_it_can_checkin_if_data_is_valid()
     {
+        Event::fake();
+
         $user = User::factory()->create();
         $book = Book::factory()->create(['isbn' => '0978110196', 'status' => Book::STATUS_AVAILABLE]);
         UserActionLog::factory()->create(['user_id' => $user->id, 'book_id' => $book->id, 'action' => UserActionLog::BOOK_CHECK_OUT]);
@@ -107,5 +116,7 @@ class CheckingControllerTest extends TestCase
         $response = $this->actingAs($user)->post(route('api.checkin'), $checkInData, ['Accept' => 'application/json']);
 
         $response->assertStatus(200)->assertJson(['success' => true, 'message' => "Book Check-in successfully"]);
+
+        Event::assertDispatched(BookCheck::class);
     }
 }

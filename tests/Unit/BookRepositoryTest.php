@@ -4,7 +4,6 @@ namespace Tests\Unit;
 
 use App\Models\Book;
 use App\Repositories\BookRepositoryInterface;
-use App\Repositories\UserRepositoryInterface;
 use Database\Factories\BookFactory;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -14,10 +13,7 @@ class BookRepositoryTest extends TestCase
 {
     use RefreshDatabase;
 
-    /**
-     * @var UserRepositoryInterface
-     */
-    protected $bookRepository;
+    protected BookRepositoryInterface $bookRepository;
 
     public function setUp(): void
     {

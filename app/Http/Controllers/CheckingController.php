@@ -8,11 +8,19 @@ use App\Http\Requests\CheckOutRequest;
 use App\Http\Traits\RespondsWithHttpStatus;
 use App\Models\Book;
 use App\Models\UserActionLog;
+use App\Repositories\CheckingRepositoryInterface;
 use Illuminate\Support\Arr;
 
 class CheckingController extends Controller
 {
     use RespondsWithHttpStatus;
+
+    protected CheckingRepositoryInterface $checkingRepository;
+
+    public function __construct(CheckingRepositoryInterface $checkingRepository)
+    {
+        $this->checkingRepository = $checkingRepository;
+    }
 
     public function checkIn(CheckInRequest $checkInRequest)
     {
@@ -26,16 +34,14 @@ class CheckingController extends Controller
         }
 
         $validated = Arr::add($validated, 'action', $action);
-        UserActionLog::create($validated);
 
-        BookCheck::dispatch($validated['book_id'], $action);
+       $this->checkingRepository->checkIn($validated);
 
         return $this->success('Book Check-in successfully');
     }
 
     public function checkOut(CheckOutRequest $checkOutRequest)
     {
-        $action = BookCheck::BOOK_CHECK_OUT;
         $validated = $checkOutRequest->validated();
 
         $findBook = Book::where('id', $validated['book_id'])->first();
@@ -44,11 +50,8 @@ class CheckingController extends Controller
             return $this->failure('Book not available for checkout.');
         }
 
-        $checkInData = Arr::add($validated, 'action', UserActionLog::BOOK_CHECK_OUT);
-
-        $checkOut = UserActionLog::create($checkInData);
-
-        BookCheck::dispatch($checkOut->book_id, $action);
+        $checkOutData = Arr::add($validated, 'action', UserActionLog::BOOK_CHECK_OUT);
+        $this->checkingRepository->checkOut($checkOutData);
 
         return $this->success('Book Check-Out successfully');
     }

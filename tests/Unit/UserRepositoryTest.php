@@ -3,22 +3,22 @@
 namespace Tests\Unit;
 
 use App\Models\User;
-use App\Repositories\Eloquent\UserRepository;
+use App\Repositories\UserRepositoryInterface;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Arr;
 use Tests\TestCase;
 
 
 class UserRepositoryTest extends TestCase
 {
-    /**
-     * @var UserRepository
-     */
-    protected $userRepository;
+    use RefreshDatabase;
+
+    protected UserRepositoryInterface $userRepository;
 
     public function setUp(): void
     {
         parent::setUp();
-        $this->userRepository = resolve(UserRepository::class);
+        $this->userRepository = resolve(UserRepositoryInterface::class);
     }
 
 
@@ -42,8 +42,10 @@ class UserRepositoryTest extends TestCase
 
     public function test_can_fetch_all_users()
     {
-        $users = User::factory()->count(10)->create();
+        User::factory()->count(10)->create();
 
-        $this->assertEquals(10, $users->count());
+        $queryUsers = $this->userRepository->all();
+
+        $this->assertEquals(10, $queryUsers->count());
     }
 }

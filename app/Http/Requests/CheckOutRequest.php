@@ -13,7 +13,7 @@ class CheckOutRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class CheckOutRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'book_id' => 'required',
+            'user_id' => 'required',
         ];
     }
 }

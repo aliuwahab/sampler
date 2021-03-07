@@ -17,7 +17,7 @@ class CreateUserActionLogsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('book_id')->constrained();
-            $table->enum('status', ['CHECKIN','CHECKOUT']);
+            $table->enum('action', ['CHECKIN','CHECKOUT']);
             $table->timestamps();
         });
     }

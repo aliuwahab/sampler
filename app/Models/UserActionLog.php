@@ -9,6 +9,9 @@ class UserActionLog extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['status'];
+    const BOOK_CHECK_IN = 'CHECKIN';
+    const BOOK_CHECK_OUT = 'CHECKOUT';
+
+    protected $guarded = ['id'];
 
 }
