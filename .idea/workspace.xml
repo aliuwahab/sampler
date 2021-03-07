@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="836aa09f-0133-4861-9872-963a1f9e3e58" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sampler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sampler.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CheckingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CheckingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CheckInRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CheckInRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CheckOutRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CheckOutRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CreatUserRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CreatUserRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/UserActionLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/UserActionLog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Eloquent/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Eloquent/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_26_010152_create_user_action_logs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_26_010152_create_user_action_logs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/BookRepositoryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/BookRepositoryTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/UserRepositoryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/UserRepositoryTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,38 +153,38 @@
       <recent name="$PROJECT_DIR$/app/Http" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.CheckingRepositoryTest.test_can_checkin">
-    <configuration name="BookRepositoryTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\BookRepositoryTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/BookRepositoryTest.php" scope="Class" />
+  <component name="RunManager" selected="PHPUnit.tests">
+    <configuration name="CheckingControllerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\CheckingControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/CheckingControllerTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="CheckingControllerTest.test_it_can_checkin_if_data_is_valid" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\CheckingControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/CheckingControllerTest.php" method="test_it_can_checkin_if_data_is_valid" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="CheckingRepositoryTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Unit\CheckingRepositoryTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/CheckingRepositoryTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="CheckingRepositoryTest.test_can_checkin" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\CheckingRepositoryTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/CheckingRepositoryTest.php" method="test_can_checkin" scope="Method" />
-      <method v="2" />
-    </configuration>
     <configuration name="CheckingRepositoryTest.test_can_checkout" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Unit\CheckingRepositoryTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/CheckingRepositoryTest.php" method="test_can_checkout" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ValidIsbnTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\ValidIsbnTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ValidIsbnTest.php" scope="Class" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <configuration name="tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" directory="$PROJECT_DIR$/tests" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.CheckingRepositoryTest.test_can_checkin" />
+        <item itemvalue="PHPUnit.tests" />
+        <item itemvalue="PHPUnit.CheckingControllerTest" />
         <item itemvalue="PHPUnit.CheckingRepositoryTest" />
         <item itemvalue="PHPUnit.CheckingRepositoryTest.test_can_checkout" />
-        <item itemvalue="PHPUnit.BookRepositoryTest" />
-        <item itemvalue="PHPUnit.ValidIsbnTest" />
+        <item itemvalue="PHPUnit.CheckingControllerTest.test_it_can_checkin_if_data_is_valid" />
       </list>
     </recent_temporary>
   </component>
@@ -215,7 +197,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614300994921</updated>
       <workItem from="1614300996319" duration="38300000" />
-      <workItem from="1615126341138" duration="19293000" />
+      <workItem from="1615126341138" duration="20886000" />
     </task>
     <servers />
   </component>
