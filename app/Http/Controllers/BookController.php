@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateBookRequest;
 use App\Http\Traits\RespondsWithHttpStatus;
-use App\Models\Book;
 use App\Repositories\BookRepositoryInterface;
 use App\Rules\ValidIsbn;
 
