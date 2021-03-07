@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CheckingController;
 use App\Http\Controllers\UserController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,21 +17,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('/login', [AuthenticationController::class, 'authenticate'])->name('api.login');
+Route::post('/users', [UserController::class, 'store'])->name('api.create.user');
+
+
+Route::middleware(['auth:api'])->group(function () {
+    Route::post('/logout', [AuthenticationController::class, 'logOut'])->name('api.logout');
+
+    Route::get('/users', [UserController::class, 'index'])->name('api.users');
+    Route::get('/users/{user}', [UserController::class, 'show'])->name('api.show.user');
+
+    Route::get('/books', [BookController::class, 'index'])->name('api.books');
+    Route::get('/books/{book}', [BookController::class, 'show'])->name('api.show.book');
+    Route::post('/books', [BookController::class, 'store'])->name('api.create.book');
+
+
+    Route::post('/check-in', [CheckingController::class, 'checkIn'])->name('api.checkin');
+    Route::post('/check-out', [CheckingController::class, 'checkOut'])->name('api.checkout');
 });
 
-
-Route::get('/users', [UserController::class, 'index']);
-Route::get('/users/{user}', [UserController::class, 'show']);
-Route::post('/users', [UserController::class, 'store']);
-Route::put('/user/{user}', [UserController::class, 'update']);
-Route::delete('/user/{user}', [UserController::class, 'delete']);
-
-
-Route::get('/books', [BookController::class, 'index']);
-Route::get('/books/{book}', [BookController::class, 'show']);
-Route::post('/books', [BookController::class, 'store']);
-Route::put('/books/{book}', [BookController::class, 'update']);
-Route::delete('/books/{book}', [BookController::class, 'delete']);
 
