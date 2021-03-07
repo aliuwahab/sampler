@@ -5,7 +5,7 @@ namespace App\Rules;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Support\Str;
 
-class ValidIban implements Rule
+class ValidIsbn implements Rule
 {
     /**
      * Create a new rule instance.
@@ -20,14 +20,13 @@ class ValidIban implements Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param  string  $attribute
-     * @param  mixed  $value
+     * @param string $attribute
+     * @param mixed $value
      * @return bool
      */
     public function passes($attribute, $value)
     {
-        return  true;
-//        return $this->IbanValidation($value);
+        return $this->IsbnValidation($value);
     }
 
     /**
@@ -41,14 +40,19 @@ class ValidIban implements Rule
     }
 
 
-    private function IbanValidation(string $isbn)
+    private function IsbnValidation(string $isbn)
     {
-//        see more here: https://www.instructables.com/How-to-verify-a-ISBN/
-        if (Str::length($isbn) !== 10) {
+        if (!is_numeric($isbn)) return false;
 
-            return false;
-        }
+        if (Str::length($isbn) !== 10) return false;
 
-        return true;
+
+        $isbnSplited = collect(array_reverse(str_split($isbn)));
+        $totalSum = $isbnSplited->reduce(function ($carry, $value, $key) {
+            ++$key;
+            return $carry + ($value * $key);
+        }, 0);
+
+        return ($totalSum % 11) === 0;
     }
 }
