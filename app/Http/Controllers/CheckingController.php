@@ -24,7 +24,7 @@ class CheckingController extends Controller
 
     public function checkIn(CheckInRequest $checkInRequest)
     {
-        $action = BookCheck::BOOK_CHECK_IN;
+        $action = UserActionLog::BOOK_CHECK_IN;
         $validated = $checkInRequest->validated();
 
         $existingCheckIn = UserActionLog::where('book_id', $validated['book_id'])->where('user_id', $validated['user_id'])->first();

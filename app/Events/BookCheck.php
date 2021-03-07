@@ -11,9 +11,6 @@ class BookCheck
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    const BOOK_CHECK_IN = 'CHECKIN';
-    const BOOK_CHECK_OUT = 'CHECKOUT';
-
     public $bookId;
     public $checkType;
 

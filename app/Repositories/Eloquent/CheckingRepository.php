@@ -11,7 +11,7 @@ class CheckingRepository implements CheckingRepositoryInterface
 
     public function checkIn(array $checkInData): bool
     {
-        $action = BookCheck::BOOK_CHECK_IN;
+        $action = UserActionLog::BOOK_CHECK_IN;
         $checkInData = Arr::add($checkInData, 'action', $action);
         UserActionLog::create($checkInData);
 
@@ -22,10 +22,10 @@ class CheckingRepository implements CheckingRepositoryInterface
 
     public function checkOut(array $checkout): bool
     {
-        $checkoutData = Arr::add($checkout, 'action', BookCheck::BOOK_CHECK_OUT);
+        $checkoutData = Arr::add($checkout, 'action', UserActionLog::BOOK_CHECK_OUT);
         UserActionLog::create($checkoutData);
 
-        BookCheck::dispatch($checkoutData['book_id'], BookCheck::BOOK_CHECK_OUT);
+        BookCheck::dispatch($checkoutData['book_id'], UserActionLog::BOOK_CHECK_OUT);
 
         return true;
     }
