@@ -1,6 +1,6 @@
 
-## About This Project Laravel
-A simple coding challenge required by sampler in the recruitment process.
+## About This Project
+A simple coding challenge administered
 
 ## System Requirements
 Make sure you have the following installed in your machine
