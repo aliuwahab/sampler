@@ -26,8 +26,9 @@ class CheckingController extends Controller
     {
         $action = UserActionLog::BOOK_CHECK_IN;
         $validated = $checkInRequest->validated();
+        $validated = Arr::add($validated, 'user_id', auth()->user()->id);
 
-        $existingCheckIn = UserActionLog::where('book_id', $validated['book_id'])->where('user_id', $validated['user_id'])->first();
+        $existingCheckIn = UserActionLog::where('book_id', $validated['book_id'])->where('user_id', auth()->user()->id)->first();
 
         if (! $existingCheckIn || $existingCheckIn->action !== UserActionLog::BOOK_CHECK_OUT) {
             return $this->failure("You cannot check-in a book you've not checkout");
@@ -43,6 +44,7 @@ class CheckingController extends Controller
     public function checkOut(CheckOutRequest $checkOutRequest)
     {
         $validated = $checkOutRequest->validated();
+        $validated = Arr::add($validated, 'user_id', auth()->user()->id);
 
         $findBook = Book::where('id', $validated['book_id'])->first();
 

@@ -24,8 +24,7 @@ class CheckOutRequest extends FormRequest
     public function rules()
     {
         return [
-            'book_id' => 'required',
-            'user_id' => 'required',
+            'book_id' => 'required'
         ];
     }
 }
