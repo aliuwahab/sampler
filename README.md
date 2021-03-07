@@ -16,7 +16,7 @@ Make sure you have the following installed in your machine
 3. Find the `.env.example` file in the root of the project and save as `.env`
 4. In the root of project run `php artisan migrate`
 5. In the root of project run `php artisan db:seed`
-6. In the root of the project run `php artisan serve`, it most likely will be running on: `http://127.0.0.1:8000` (or take note of the port is running on as that depends on the ports that are free on your system)
+6. In the root of the project run `php artisan serve`, it most likely will be running on: `http://127.0.0.1:8000` (but take note of the port is running on as that depends on the ports that are free on your system)
 
 
 
