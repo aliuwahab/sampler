@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="836aa09f-0133-4861-9872-963a1f9e3e58" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CheckingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CheckingController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CheckInRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CheckInRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CheckOutRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CheckOutRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/CheckingControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/CheckingControllerTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,13 +151,13 @@
       <recent name="$PROJECT_DIR$/app/Http" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.tests">
+  <component name="RunManager" selected="PHPUnit.CheckingControllerTest.test_check_in_validates_required_fields_and_returns_validation_error">
     <configuration name="CheckingControllerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\CheckingControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/CheckingControllerTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="CheckingControllerTest.test_it_can_checkin_if_data_is_valid" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\CheckingControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/CheckingControllerTest.php" method="test_it_can_checkin_if_data_is_valid" scope="Method" />
+    <configuration name="CheckingControllerTest.test_check_in_validates_required_fields_and_returns_validation_error" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\CheckingControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/CheckingControllerTest.php" method="test_check_in_validates_required_fields_and_returns_validation_error" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="CheckingRepositoryTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -181,11 +178,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.CheckingControllerTest.test_check_in_validates_required_fields_and_returns_validation_error" />
         <item itemvalue="PHPUnit.tests" />
         <item itemvalue="PHPUnit.CheckingControllerTest" />
         <item itemvalue="PHPUnit.CheckingRepositoryTest" />
         <item itemvalue="PHPUnit.CheckingRepositoryTest.test_can_checkout" />
-        <item itemvalue="PHPUnit.CheckingControllerTest.test_it_can_checkin_if_data_is_valid" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +195,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614300994921</updated>
       <workItem from="1614300996319" duration="38300000" />
-      <workItem from="1615126341138" duration="22110000" />
+      <workItem from="1615126341138" duration="22393000" />
     </task>
     <servers />
   </component>

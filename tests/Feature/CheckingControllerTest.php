@@ -48,7 +48,7 @@ class CheckingControllerTest extends TestCase
 
         $response
             ->assertStatus(422)
-            ->assertJson(['message' => 'The given data was invalid.', 'errors' => ['book_id' => ['The book id field is required.'], 'user_id' => ['The user id field is required.']]]);
+            ->assertJson(['message' => 'The given data was invalid.', 'errors' => ['book_id' => ['The book id field is required.']]]);
     }
 
     public function test_it_validates_if_book_is_available_for_checkout()
@@ -88,7 +88,7 @@ class CheckingControllerTest extends TestCase
 
         $response
             ->assertStatus(422)
-            ->assertJson(['message' => 'The given data was invalid.', 'errors' => ['book_id' => ['The book id field is required.'], 'user_id' => ['The user id field is required.']]]);
+            ->assertJson(['message' => 'The given data was invalid.', 'errors' => ['book_id' => ['The book id field is required.']]]);
     }
 
 
