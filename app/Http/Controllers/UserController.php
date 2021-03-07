@@ -4,29 +4,39 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreatUserRequest;
 use App\Http\Traits\RespondsWithHttpStatus;
-use App\Models\User;
-use Illuminate\Http\Request;
+use App\Repositories\UserRepositoryInterface;
 
 class UserController extends Controller
 {
     use RespondsWithHttpStatus;
 
+    protected UserRepositoryInterface $userRepository;
+
+    public function __construct(UserRepositoryInterface $userRepository)
+    {
+        $this->userRepository = $userRepository;
+    }
 
     public function index()
     {
-        $users = User::all();
+        $users = $this->userRepository->all();
 
         return $this->success('Users retrieved successfully', $users);
     }
 
-    public function show(User $user)
+    public function show(int $userId)
     {
-        return $this->success('User retrived successfully', $user);
+        $user = $this->userRepository->find($userId);
+
+        return $this->success('User Retrieved successfully', $user);
     }
 
     public function store(CreatUserRequest $creatUserRequest)
     {
+        $validated = $creatUserRequest->validated();
+        $user = $this->userRepository->create($validated);
 
+        return $this->success('User Created Successfully', $user);
     }
 
 
